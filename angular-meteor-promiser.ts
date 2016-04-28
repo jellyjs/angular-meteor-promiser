@@ -13,18 +13,12 @@ class Promiser {
 
   public subscribe(name, ...args) {
     return this._promise((resolve, reject) => {
-      console.log('sub');
       const handle = Meteor.subscribe(name, ...args, {
         onReady() {
-          console.log('onready');
           resolve(handle);
         },
         onStop() {
-          console.log('onstop')
           reject();
-        },
-        onError() {
-          console.log('onerror');
         }
       });
     });
@@ -54,12 +48,18 @@ class Promiser {
     });
   }
 
+  public any(fn) {
+    return this._promise((resolve, reject) => {
+      try {
+        resolve(fn());
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
   private _promise(fn) {
-    const d = this.$q.defer();
-
-    fn(d.resolve, d.reject);
-
-    return d.promise;
+    return this.$q(fn);
   }
 }
 

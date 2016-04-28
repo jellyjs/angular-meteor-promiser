@@ -1,6 +1,6 @@
 {
   "name": "angular-meteor-promiser",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Turns Meteor subscribe, call, apply callbacks into promises",
   "main": "angular-meteor-promiser.js",
   "repository": {

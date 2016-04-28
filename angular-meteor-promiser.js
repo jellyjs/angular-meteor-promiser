@@ -11,18 +11,12 @@ var Promiser = (function () {
             args[_i - 1] = arguments[_i];
         }
         return this._promise(function (resolve, reject) {
-            console.log('sub');
             var handle = meteor_1.Meteor.subscribe.apply(meteor_1.Meteor, [name].concat(args, [{
                 onReady: function () {
-                    console.log('onready');
                     resolve(handle);
                 },
                 onStop: function () {
-                    console.log('onstop');
                     reject();
-                },
-                onError: function () {
-                    console.log('onerror');
                 }
             }]));
         });
@@ -59,10 +53,18 @@ var Promiser = (function () {
             }]));
         });
     };
+    Promiser.prototype.any = function (fn) {
+        return this._promise(function (resolve, reject) {
+            try {
+                resolve(fn());
+            }
+            catch (error) {
+                reject(error);
+            }
+        });
+    };
     Promiser.prototype._promise = function (fn) {
-        var d = this.$q.defer();
-        fn(d.resolve, d.reject);
-        return d.promise;
+        return this.$q(fn);
     };
     return Promiser;
 }());
