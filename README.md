@@ -20,7 +20,7 @@ Same arguments as `Meteor.subscribe` but without callback.
 
 Same arguments as `Meteor.call`.
 
-#### apply=
+#### apply
 
 Same arguments as `Meteor.apply`.
 
@@ -35,14 +35,21 @@ function foo(bar) {
   return bar;
 }
 
-$promiser.any(() => foo('sync'))
+$promiser.any(() => {
+
+  return foo('sync');
+  
+})
   .then((data) => { ... }) // 'sync'
   .catch((error) => { ... });
 
+
 $promiser.any((done) => {
+
   setTimeout(() => {
-    done(foo('async'))
+    done(foo('async'));
   }, 500);
+  
 })
   .then((data) => { ... }) // 'async'
   .catch((error) => { ... });
