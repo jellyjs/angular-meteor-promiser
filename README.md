@@ -7,7 +7,8 @@ Turns Meteor subscribe, call, apply callbacks into promises
 npm install angular-meteor-promiser
 ```
 
-### $promiser
+
+### `$promiser`
 
 #### subscribe : *Promise*
 
