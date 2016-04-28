@@ -67,7 +67,7 @@ class Promiser {
   }
 }
 
-const name = 'angular-meteor.promiser';
+const name = 'angular-meteor-promiser';
 export default name;
 
 angular

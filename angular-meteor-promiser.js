@@ -71,7 +71,7 @@ var Promiser = (function () {
     };
     return Promiser;
 }());
-var name = 'angular-meteor.promiser';
+var name = 'angular-meteor-promiser';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = name;
 angular

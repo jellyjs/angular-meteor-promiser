@@ -7,8 +7,23 @@ Turns Meteor subscribe, call, apply callbacks into promises
 npm install angular-meteor-promiser
 ```
 
+```js
+angular.module('app', [
+  'angular-meteor-promiser'
+]);
+```
+
 
 ### `$promiser`
+
+```js
+function controller($promiser) {
+  // $promiser.subscribe
+  // $promiser.call
+  // $promiser.apply
+  // $promiser.any
+}
+```
 
 #### subscribe
 
@@ -38,7 +53,7 @@ function foo(bar) {
 $promiser.any(() => {
 
   return foo('sync');
-  
+
 })
   .then((data) => { ... }) // 'sync'
   .catch((error) => { ... });
@@ -49,7 +64,7 @@ $promiser.any((done) => {
   setTimeout(() => {
     done(foo('async'));
   }, 500);
-  
+
 })
   .then((data) => { ... }) // 'async'
   .catch((error) => { ... });

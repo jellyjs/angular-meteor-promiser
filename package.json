@@ -1,8 +1,14 @@
 {
   "name": "angular-meteor-promiser",
-  "version": "0.2.0",
-  "description": "Turns Meteor subscribe, call, apply callbacks into promises",
+  "version": "1.0.0",
+  "description": "Turns Meteor subscribe, call, apply callbacks into AngularJS promises",
   "main": "angular-meteor-promiser.js",
+  "keywords": [
+    "AngularJS",
+    "Meteor",
+    "angular-meteor",
+    "angular"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jellyjs/angular-meteor-promiser.git"
