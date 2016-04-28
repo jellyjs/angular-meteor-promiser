@@ -18,11 +18,11 @@ Same arguments as `Meteor.subscribe` but without callback.
 
 #### call : *Promise*
 
-Same arguments as `Meteor.call`
+Same arguments as `Meteor.call`.
 
 #### apply : *Promise*
 
-Same arguments as `Meteor.apply
+Same arguments as `Meteor.apply`.
 
 #### any : *Promise* `not yet!`
 
