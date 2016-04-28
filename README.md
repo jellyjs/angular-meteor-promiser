@@ -12,7 +12,7 @@ npm install angular-meteor-promiser
 
 #### subscribe : *Promise*
 
-Same arguments as `Meteor.subscribe` but without callback. 
+Same arguments as `Meteor.subscribe` but without callback.
 
 `resolve()` receives a handle that provides `stop()` and `ready()` methods.
 
@@ -24,15 +24,14 @@ Same arguments as `Meteor.call`.
 
 Same arguments as `Meteor.apply`.
 
-#### any : *Promise* `not yet!`
+#### any : *Promise*
 
 ```js
-
 function foo(bar) {
   if (!bar) {
     throw new Error('Bar, we need you!');
   }
-  
+
   return bar;
 }
 
