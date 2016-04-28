@@ -51,7 +51,11 @@ class Promiser {
   public any(fn) {
     return this._promise((resolve, reject) => {
       try {
-        resolve(fn());
+        const result = fn(resolve);
+
+        if (typeof result !== 'undefined') {
+          resolve(result);
+        }
       } catch (error) {
         reject(error);
       }

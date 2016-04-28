@@ -56,7 +56,10 @@ var Promiser = (function () {
     Promiser.prototype.any = function (fn) {
         return this._promise(function (resolve, reject) {
             try {
-                resolve(fn());
+                var result = fn(resolve);
+                if (typeof result !== 'undefined') {
+                    resolve(result);
+                }
             }
             catch (error) {
                 reject(error);

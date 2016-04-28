@@ -10,21 +10,21 @@ npm install angular-meteor-promiser
 
 ### `$promiser`
 
-#### subscribe : *Promise*
+#### subscribe
 
 Same arguments as `Meteor.subscribe` but without callback.
 
 `resolve()` receives a handle that provides `stop()` and `ready()` methods.
 
-#### call : *Promise*
+#### call
 
 Same arguments as `Meteor.call`.
 
-#### apply : *Promise*
+#### apply=
 
 Same arguments as `Meteor.apply`.
 
-#### any : *Promise*
+#### any *(sync and async)*
 
 ```js
 function foo(bar) {
@@ -35,7 +35,15 @@ function foo(bar) {
   return bar;
 }
 
-$promiser.any(() => foo('bar'))
-  .then((data) => { ... })
+$promiser.any(() => foo('sync'))
+  .then((data) => { ... }) // 'sync'
+  .catch((error) => { ... });
+
+$promiser.any((done) => {
+  setTimeout(() => {
+    done(foo('async'))
+  }, 500);
+})
+  .then((data) => { ... }) // 'async'
   .catch((error) => { ... });
 ```
