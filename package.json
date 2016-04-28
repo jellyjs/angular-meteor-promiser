@@ -1,0 +1,23 @@
+{
+  "name": "angular-meteor-promiser",
+  "version": "0.0.1",
+  "description": "Turns Meteor subscribe, call, apply callbacks into promises",
+  "main": "angular-meteor-promiser.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellyjs/angular-meteor-promiser.git"
+  },
+  "author": "Kamil Kisiela <kamil.kisiela@gmail.com> (http://github.com/kamilkisiela/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jellyjs/angular-meteor-promiser/issues"
+  },
+  "homepage": "https://github.com/jellyjs/angular-meteor-promiser#readme",
+  "peerDependencies": {
+    "angular": "^1.4.0"
+  },
+  "devDependencies": {
+    "tsc": "^1.20150623.0",
+    "typescript": "^1.8.10"
+  }
+}
