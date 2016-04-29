@@ -17,8 +17,8 @@ class Promiser {
         onReady() {
           resolve(handle);
         },
-        onStop() {
-          reject();
+        onStop(error) {
+          reject(error);
         }
       });
     });
