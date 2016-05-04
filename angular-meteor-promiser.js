@@ -15,8 +15,8 @@ var Promiser = (function () {
                 onReady: function () {
                     resolve(handle);
                 },
-                onStop: function () {
-                    reject();
+                onStop: function (error) {
+                    reject(error);
                 }
             }]));
         });
@@ -56,7 +56,7 @@ var Promiser = (function () {
     Promiser.prototype.any = function (fn) {
         return this._promise(function (resolve, reject) {
             try {
-                var result = fn(resolve);
+                var result = fn(resolve, reject);
                 if (typeof result !== 'undefined') {
                     resolve(result);
                 }
