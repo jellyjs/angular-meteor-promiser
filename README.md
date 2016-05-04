@@ -59,10 +59,10 @@ $promiser.any(() => {
   .catch((error) => { ... });
 
 
-$promiser.any((done) => {
+$promiser.any((resolve, reject) => {
 
   setTimeout(() => {
-    done(foo('async'));
+    resolve(foo('async'));
   }, 500);
 
 })
